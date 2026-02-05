@@ -114,9 +114,13 @@ def prediction_page():
     return render_template("prediction.html")
 
 
-@app.route("/predict", methods=["POST"])
+@app.route("/predict", methods=["GET", "POST"])
 def predict():
     """Handle prediction"""
+    # Redirect GET requests to prediction page
+    if request.method == "GET":
+        return redirect(url_for("prediction_page"))
+    
     try:
         if model is None:
             return jsonify({"error": "Model not loaded"}), 500

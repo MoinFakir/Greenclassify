@@ -152,6 +152,23 @@ collegeproject_v2/
 ├── uploads/           # Uploaded images
 └── venv/             # Virtual environment
 ```
+## 🎨 Design
+
+This section outlines the system design, architecture, and major components of GreenClassify v2.
+
+- **Architecture:** Simple Flask web server hosting a TensorFlow model that serves predictions through a REST API. Clients (browser or curl) upload images to the API which returns top-N predictions.
+- **Components:**
+  - **Data pipeline:** Images organized into `train/`, `validation/`, `test/` folders under `Vegetable_Dataset/`. Preprocessing includes resizing to model input size, normalization, and optional augmentation during training.
+  - **Model:** Transfer learning based on ResNet50 (fine-tuned). Preferred model file: `vegetable_model.keras` with fallback `vegetable_model.h5`.
+  - **Inference:** `app.py` loads the model at startup, exposes `/api/predict` and `/health` endpoints, and returns top-3 predictions with confidence scores.
+  - **Web UI:** Simple responsive frontend under `templates/` with drag-and-drop upload, real-time preview, and result pages.
+  - **Uploads storage:** Uploaded images stored in `uploads/` for debugging and optional re-training.
+  - **Testing & Validation:** Unit tests in `test_*.py` and sample notebooks in `backup/` for reproducibility and evaluation.
+
+- **Deployment:** Can run on Heroku/Render/Railway or inside Docker. Use `Procfile` and `requirements.txt` for platform deployment and `docker` for containerization.
+- **Scalability & Performance:** For production, serve the model with a WSGI server (Gunicorn) and place behind a reverse proxy or load balancer; consider using TensorFlow Serving or model quantization for lower latency.
+- **Security & Privacy:** Validate uploads, set reasonable file-size limits, and avoid logging sensitive user data. Store models and uploads with appropriate permissions.
+- **Extensibility:** Add new classes by retraining with images added to `Vegetable_Dataset/` and exporting a new `.keras` model. Training scripts are in `train_model.py` and `train_simple.py`.
 
 ## 🎓 Academic Information
 

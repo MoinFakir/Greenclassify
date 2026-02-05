@@ -18,15 +18,20 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 15px;
+            overflow-x: hidden;
         }
 
         .container {
             text-align: center;
             background: white;
-            padding: 60px 80px;
+            padding: 40px 50px;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             max-width: 600px;
+            width: 100%;
+            max-height: 95vh;
+            overflow-y: auto;
             animation: fadeIn 0.5s ease-in;
         }
 
@@ -36,38 +41,38 @@
         }
 
         .logo {
-            font-size: 4em;
-            margin-bottom: 20px;
+            font-size: 3.5em;
+            margin-bottom: 15px;
         }
 
         h1 {
             color: #333;
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 2em;
+            margin-bottom: 8px;
             font-weight: 700;
         }
 
         .version {
             color: #667eea;
-            font-size: 0.9em;
-            margin-bottom: 20px;
+            font-size: 0.85em;
+            margin-bottom: 15px;
         }
 
         p {
             color: #666;
-            font-size: 1.2em;
-            margin-bottom: 40px;
+            font-size: 1.05em;
+            margin-bottom: 30px;
             line-height: 1.6;
         }
 
         .btn {
             display: inline-block;
-            padding: 18px 50px;
+            padding: 15px 45px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             font-weight: 600;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
             transition: all 0.3s ease;
@@ -79,33 +84,123 @@
         }
 
         .features {
-            margin-top: 40px;
+            margin-top: 30px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
             text-align: left;
         }
 
         .feature {
-            padding: 15px;
+            padding: 12px;
             background: #f8f9fa;
             border-radius: 10px;
         }
 
         .feature-icon {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 1.8em;
+            margin-bottom: 8px;
         }
 
         .feature-title {
             color: #333;
             font-weight: 600;
             margin-bottom: 5px;
+            font-size: 0.95em;
         }
 
         .feature-desc {
             color: #666;
-            font-size: 0.85em;
+            font-size: 0.8em;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 25px;
+                max-height: 98vh;
+            }
+
+            .logo {
+                font-size: 2.8em;
+                margin-bottom: 12px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                margin-bottom: 6px;
+            }
+
+            .version {
+                font-size: 0.8em;
+                margin-bottom: 12px;
+            }
+
+            p {
+                font-size: 0.95em;
+                margin-bottom: 25px;
+            }
+
+            .btn {
+                padding: 12px 35px;
+                font-size: 1em;
+            }
+
+            .features {
+                margin-top: 25px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .feature {
+                padding: 10px;
+            }
+
+            .feature-icon {
+                font-size: 1.5em;
+                margin-bottom: 6px;
+            }
+
+            .feature-title {
+                font-size: 0.85em;
+            }
+
+            .feature-desc {
+                font-size: 0.75em;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .container {
+                padding: 25px 35px;
+            }
+
+            .logo {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 6px;
+            }
+
+            p {
+                font-size: 0.95em;
+                margin-bottom: 20px;
+            }
+
+            .features {
+                margin-top: 20px;
+                gap: 10px;
+            }
+
+            .feature {
+                padding: 8px;
+            }
+
+            .feature-icon {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
