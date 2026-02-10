@@ -1,0 +1,20 @@
+# Production Dependencies for Render Deployment
+# Updated for Python 3.12+ compatibility
+
+# Core Framework
+flask>=3.1.0
+werkzeug>=3.1.0
+
+# Machine Learning
+tensorflow>=2.18.0,<2.19
+numpy>=1.26.0,<2.0
+h5py>=3.12.0
+
+# Image Processing
+pillow>=11.0.0
+
+# Production Server
+gunicorn>=23.0.0
+
+# Environment Management
+python-dotenv>=1.0.1

@@ -18,8 +18,9 @@ instance/
 uploads/*
 !uploads/.gitkeep
 
-# Model files (large)
-*.h5
+# Backup model files
+backup/*.h5
+backup/*.keras
 
 # Backup files
 backup/
