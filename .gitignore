@@ -20,7 +20,6 @@ uploads/*
 
 # Model files (large)
 *.h5
-*.keras
 
 # Backup files
 backup/
